@@ -1,0 +1,17 @@
+/modem		emmc	/dev/block/platform/13500000.dwmmc0/by-name/radio       flags=backup=1;display="Baseband"
+/boot           emmc    /dev/block/platform/13500000.dwmmc0/by-name/boot
+/cache          ext4	/dev/block/platform/13500000.dwmmc0/by-name/cache       flags=backup=1;display="Preload"
+/data           ext4	/dev/block/platform/13500000.dwmmc0/by-name/userdata
+/efs		ext4	/dev/block/platform/13500000.dwmmc0/by-name/efs         flags=backup=1;display="EFS"
+/product	ext4	/dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;display="Product"
+/system         ext4    /dev/block/platform/13500000.dwmmc0/by-name/system
+/system_image   emmc    /dev/block/platform/13500000.dwmmc0/by-name/system
+/vendor		ext4	/dev/block/platform/13500000.dwmmc0/by-name/vendor      flags=backup=1
+/vendor_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/vendor      flags=backup=1;display="Carrier Configs";flashimg
+
+/recovery       emmc    /dev/block/platform/13500000.dwmmc0/by-name/recovery
+
+/misc		emmc	/dev/block/platform/13500000.dwmmc0/by-name/misc        flags=backup=0;display="Misc"
+
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0        flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sdf1 /dev/block/sdf                 flags=display="USB-OTG";storage;wipeingui;removable
