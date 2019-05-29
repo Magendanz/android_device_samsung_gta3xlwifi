@@ -1,14 +1,13 @@
-/cache          ext4    /dev/block/by-name/cache       flags=backup=1;display=Cache
-/efs            ext4    /dev/block/by-name/efs         flags=backup=1;display=EFS;backup=1
-/cpefs          ext4    /dev/block/by-name/cpesf       flags=backup=1;display=CPEFS;subpartitionof=/efs
-/product        ext4    /dev/block/by-name/product     flags=backup=1;display=Product
-/system         ext4    /dev/block/by-name/system      flags=backup=1;display=System
-/vendor         ext4    /dev/block/by-name/vendor      flags=backup=1;display=Vendor
-/data           ext4    /dev/block/by-name/userdata    flags=backup=1
+/efs            ext4    /dev/block/platform/13500000.dwmmc0/by-name/efs         flags=backup=1;display=EFS;backup=1
+/system         ext4    /dev/block/platform/13500000.dwmmc0/by-name/system      flags=backup=1;display=System
+/vendor         ext4    /dev/block/platform/13500000.dwmmc0/by-name/vendor      flags=backup=1;display=Vendor
+/product        ext4    /dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;display=Product
+/cache          ext4    /dev/block/platform/13500000.dwmmc0/by-name/cache       flags=backup=1;display=Cache
+/data           ext4    /dev/block/platform/13500000.dwmmc0/by-name/userdata    flags=backup=1
 
-/boot           emmc    /dev/block/by-name/boot        flags=backup=1;display=Boot
-/recovery       emmc    /dev/block/by-name/recovery    flags=backup=1;display=Recovery
-/misc           emmc    /dev/block/by-name/misc
+/boot           emmc    /dev/block/platform/13500000.dwmmc0/by-name/boot        flags=backup=1;display=Boot
+/recovery       emmc    /dev/block/platform/13500000.dwmmc0/by-name/recovery    flags=backup=1;display=Recovery
+/misc           emmc    /dev/block/platform/13500000.dwmmc0/by-name/misc
 
-/external_sd    vfat    /dev/block/mmcblk1p1           flags=storage;wipeingui;removable;display="External SD"
-/usb-otg        vfat    /dev/block/sde1                flags=storage;wipeingui;removable;display="USB OTG"
+/external_sd    vfat    /dev/block/mmcblk1p1 /dev/block/mmcblk1    flags=storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sda1 /dev/block/sda		   flags=storage;wipeingui;removable

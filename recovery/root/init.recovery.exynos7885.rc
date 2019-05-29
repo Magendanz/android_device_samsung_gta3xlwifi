@@ -1,4 +1,25 @@
 on init
     write /proc/sys/kernel/hung_task_timeout_secs 0
+    write /sys/class/power_supply/battery/siop_level 0
+    export LD_CONFIG_FILE /etc/ld.config.txt
+
+on fs
+    chown system system /sys/class/backlight/panel/brightness
+    chmod 0666 /sys/class/backlight/panel/brightness
+    write /sys/class/backlight/panel/brightness 12000
+    chmod 0000 /sys/class/backlight/panel/brightness
+
+on post-fs
 
 on boot
+
+on property:sys.param_partition=*
+    symlink ${sys.param_partition} /dev/block/param
+    chown root system /dev/block/param
+    chmod 0666 /dev/block/param
+
+# Fix linker warnings when binaries are executed while /system is mounted.
+service ldconfigtxt /sbin/touch /etc/ld.config.txt
+    oneshot
+    seclabel u:r:recovery:s0
+
