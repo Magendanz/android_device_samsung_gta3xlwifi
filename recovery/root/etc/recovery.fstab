@@ -1,15 +1,47 @@
-/efs            ext4    /dev/block/platform/13500000.dwmmc0/by-name/efs         flags=backup=1;display=EFS;backup=1
-/system         ext4    /dev/block/platform/13500000.dwmmc0/by-name/system      flags=backup=1;display=System
-/system_image   emmc    /dev/block/platform/13500000.dwmmc0/by-name/system	flags=flashimg
-/vendor         ext4    /dev/block/platform/13500000.dwmmc0/by-name/vendor      flags=backup=1;display=Vendor
-/vendor_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/vendor	flags=flashimg
-/product        ext4    /dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;flashimg;display=Product
-/cache          ext4    /dev/block/platform/13500000.dwmmc0/by-name/cache       flags=backup=1;display=Cache
-/data           ext4    /dev/block/platform/13500000.dwmmc0/by-name/userdata    flags=backup=1
+# Copyright (c) 2011, Code Aurora Forum. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of Code Aurora Forum, Inc. nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-/boot           emmc    /dev/block/platform/13500000.dwmmc0/by-name/boot        flags=backup=1;display=Boot
-/recovery       emmc    /dev/block/platform/13500000.dwmmc0/by-name/recovery    flags=backup=1;display=Recovery
-/misc           emmc    /dev/block/platform/13500000.dwmmc0/by-name/misc
+# <src>                 <mnt_point>     <type>  <mnt_flags and options> <fs_mgr_flags>
+/dev/block/platform/13500000.dwmmc0/by-name/sec_efs     /efs            ext4    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/sec_efs     /sec_efs        ext4    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/boot        /boot           emmc    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/recovery    /recovery       emmc    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/cache       /cache          ext4    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/system      /		        ext4    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/userdata    /data           ext4    defaults         wait,length=-20480
+/dev/block/platform/13500000.dwmmc0/by-name/cpefs       /cpefs          ext4    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/misc        /misc           emmc    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/radio       /modem     		emmc    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/vendor		/vendor			ext4	default			 recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/cp_debug    /cp_debug       emmc    default          recoveryonly
+/dev/block/mmcblk1p1                                    /sdcard         vfat    defaults         recoveryonly 
+/dev/block/platform/13500000.dwmmc0/by-name/product	    /product		ext4    defaults         recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/param       /param          emmc    defaults         recoveryonly
 
-/external_sd    vfat    /dev/block/mmcblk1p1 /dev/block/mmcblk1    flags=storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sda1 /dev/block/sda		   flags=storage;wipeingui;removable
+#Auto-generated code by FOTA Portal
+/dev/block/platform/13500000.dwmmc0/by-name/dtb	/dtb	emmc	default	recoveryonly
+/dev/block/platform/13500000.dwmmc0/by-name/dtbo	/dtbo	emmc	default	recoveryonly

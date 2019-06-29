@@ -1,4 +1,4 @@
-## Recovery Device Tree for the 2019 Samsung Galaxy Tab A [SM-T510/T515]
+## Recovery Device Tree for the 2019 Samsung Galaxy Tab A [SM-T510]
 
 ## How-to compile it:
 
