@@ -5,18 +5,18 @@
 # mount point   fstype  device                 device2                          flags
 
 /boot           emmc    /dev/block/platform/13500000.dwmmc0/by-name/boot        flags=backup=1
-/recovery       emmc    /dev/block/platform/13500000.dwmmc0/by-name/recovery    flags=backup=1
+/recovery       emmc    /dev/block/platform/13500000.dwmmc0/by-name/recovery
 /misc           emmc    /dev/block/platform/13500000.dwmmc0/by-name/misc
 
-/efs            ext4    /dev/block/platform/13500000.dwmmc0/by-name/efs         flags=backup=1;display=EFS
-/system         ext4    /dev/block/platform/13500000.dwmmc0/by-name/system      flags=backup=1
-/system_image   emmc    /dev/block/platform/13500000.dwmmc0/by-name/system	flags=flashimg
+/efs            ext4    /dev/block/platform/13500000.dwmmc0/by-name/efs         flags=backup=1;display="EFS"
+/system_root    ext4    /dev/block/platform/13500000.dwmmc0/by-name/system      flags=backup=1;display="System"
+/system_image   emmc    /dev/block/platform/13500000.dwmmc0/by-name/system	flags=backup=1;flashimg
 /vendor         ext4    /dev/block/platform/13500000.dwmmc0/by-name/vendor      flags=backup=1
-/vendor_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/vendor	flags=flashimg
-/product        ext4    /dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;display=Product
-/product_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/product	flags=flashimg;display="Product Image"
+/vendor_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/vendor	flags=backup=1;flashimg
+/product        ext4    /dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;display="Product"
+/product_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/product	flags=backup=1;flashimg;display="Product Image"
 /cache          ext4    /dev/block/platform/13500000.dwmmc0/by-name/cache       flags=backup=1
-/data           ext4    /dev/block/platform/13500000.dwmmc0/by-name/userdata    flags=length=-20480,encryptable=footer
+/data           ext4    /dev/block/platform/13500000.dwmmc0/by-name/userdata
 
 # Removable storage
 /external_sd    auto    /dev/block/mmcblk1p1   /dev/block/mmcblk1    flags=storage;wipeingui;removable
