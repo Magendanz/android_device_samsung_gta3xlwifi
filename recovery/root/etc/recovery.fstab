@@ -32,13 +32,13 @@
 /dev/block/platform/13500000.dwmmc0/by-name/recovery    /recovery       emmc    defaults         recoveryonly
 /dev/block/platform/13500000.dwmmc0/by-name/cache       /cache          ext4    defaults         recoveryonly
 /dev/block/platform/13500000.dwmmc0/by-name/system      /		        ext4    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/userdata    /data           ext4    defaults         wait,length=-20480
+/dev/block/platform/13500000.dwmmc0/by-name/userdata	/data	ext4	defaults	wait,length=-20480
 /dev/block/platform/13500000.dwmmc0/by-name/cpefs       /cpefs          ext4    defaults         recoveryonly
 /dev/block/platform/13500000.dwmmc0/by-name/misc        /misc           emmc    defaults         recoveryonly
 /dev/block/platform/13500000.dwmmc0/by-name/radio       /modem     		emmc    defaults         recoveryonly
 /dev/block/platform/13500000.dwmmc0/by-name/vendor		/vendor			ext4	default			 recoveryonly
 /dev/block/platform/13500000.dwmmc0/by-name/cp_debug    /cp_debug       emmc    default          recoveryonly
-/dev/block/mmcblk1p1                                    /sdcard         vfat    defaults         recoveryonly 
+/dev/block/mmcblk1p1                                    /sdcard         sdfat   defaults         recoveryonly 
 /dev/block/platform/13500000.dwmmc0/by-name/product	    /product		ext4    defaults         recoveryonly
 /dev/block/platform/13500000.dwmmc0/by-name/param       /param          emmc    defaults         recoveryonly
 
