@@ -131,30 +131,38 @@
 /dev/seiren               0660   system     audio
 
 # Mobicore
-/dev/mobicore             0700   system     system
+/dev/mobicore             0600   system     system
 /dev/mobicore-user        0666   radio      system
 
 # Secure MEM driver
 /dev/s5p-smem             0660   system     system
 
-#cbd
-/dev/block/mmcblk0p5      0400   radio      radio
-/dev/umts_ramdump0        0660   radio      radio
+# TEEGRIS
+/dev/tzdev                0666   system     system
+/dev/tziwsock             0666   system     system
+/dev/ionfd2phys           0660   system     system
+/dev/tzirs                0660   system     system
+/dev/tuihw                0660   system     system
+
+# Secure MEM driver
+/dev/s5p-smem             0660   system     system
 
 # DM tools
-/dev/umts_dm0             0660   radio      radio
-/dev/umts_router          0660   radio      radio
 /dev/ttyGS0               0660   system     system
 /dev/ttyGS1               0660   system     system
 
 # Modem Interface
 /dev/block/platform/13500000.dwmmc0/by-name/radio	0660   system     radio
 /dev/block/platform/13500000.dwmmc0/by-name/cp_debug   0660	radio	system
-/dev/umts*            0660   system      radio
-/dev/umts_csd         0660   system      loop_radio
-/dev/smd4               0660   system     radio
-/dev/ramdump_memshare               0660   system     radio
+/dev/umts*                0660   system     radio
+/dev/ipc*                 0660   system     radio
+/dev/umts_csd             0660   system     loop_radio
+/dev/smd4                 0660   system     radio
+/dev/ramdump_memshare     0660   system     radio
 /dev/umts_ciq*            0660   system     bridge_rw
+
+# dev ril bridge
+/dev/drb                0660   system     radio
 
 # interactive governor parameters
 /sys/devices/system/cpu/cpu*	cpufreq/interactive/timer_rate			0660	system	system
@@ -189,21 +197,19 @@
 /dev/mx140_usb_clk_test_0 0660   wifi     wifi
 /dev/scsc_log_collector_0 0660   wifi     wifi
 
-# Sensor
-/dev/input/event* 0660 system input
-/sys/devices/virtual/input/input*   enable      0660  system   input
-/sys/devices/virtual/input/input*   poll_delay  0660  system   input
+# Google FRP solution
+/dev/block/platform/13500000.dwmmc0/by-name/PERSISTENT    0660    system    system
 
-# TEEGRIS
-/dev/tzdev		0666	system		system
-/dev/tziwsock		0666	system		system
-/dev/ionfd2phys		0660	system		system
-/dev/tuihw		0660	system		system
-/dev/tzirs		0660	system		system
-/dev/nwfsdev		0660	system		system
+# Reactivation Lock solution
+/dev/block/platform/13500000.dwmmc0/by-name/STEADY    0660    system    system
 
 # Google FRP solution
 /dev/block/platform/13500000.dwmmc0/by-name/persistent    0660    system    system
 
 # Reactivation Lock solution
 /dev/block/platform/13500000.dwmmc0/by-name/steady    0660    system    system
+
+# Sensor
+/dev/input/event* 0660 system input
+/sys/devices/virtual/input/input*   enable      0660  system   input
+/sys/devices/virtual/input/input*   poll_delay  0660  system   input
