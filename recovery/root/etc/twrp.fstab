@@ -10,15 +10,15 @@
 
 /efs            ext4    /dev/block/platform/13500000.dwmmc0/by-name/efs         flags=backup=1;display="EFS"
 /system_root    ext4    /dev/block/platform/13500000.dwmmc0/by-name/system      flags=backup=1;display="System"
-/system_image   emmc    /dev/block/platform/13500000.dwmmc0/by-name/system	flags=backup=1;flashimg
+/system_image   emmc    /dev/block/platform/13500000.dwmmc0/by-name/system      flags=backup=1;flashimg
 /vendor         ext4    /dev/block/platform/13500000.dwmmc0/by-name/vendor      flags=backup=1
-/vendor_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/vendor	flags=backup=1;flashimg
-/product        ext4    /dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;display="Product"
-/product_image	emmc	/dev/block/platform/13500000.dwmmc0/by-name/product	flags=backup=1;flashimg;display="Product Image"
+/vendor_image   emmc    /dev/block/platform/13500000.dwmmc0/by-name/vendor      flags=backup=1;flashimg
+/product        ext4    /dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;wipeingui;display="Product"
+/product_image  emmc    /dev/block/platform/13500000.dwmmc0/by-name/product     flags=backup=1;flashimg;display="Product Image"
 /cache          ext4    /dev/block/platform/13500000.dwmmc0/by-name/cache       flags=backup=1
 /data           ext4    /dev/block/platform/13500000.dwmmc0/by-name/userdata
 
 # Removable storage
-/external_sd    auto    /dev/block/mmcblk1p1   /dev/block/mmcblk1    flags=storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sda1        /dev/block/sda        flags=storage;wipeingui;removable
+/external_sd    auto    /dev/block/mmcblk1p1   /dev/block/mmcblk1    flags=storage;wipeingui;removable;display="Micro SD card"
+/usb-otg        vfat    /dev/block/sda1        /dev/block/sda        flags=storage;wipeingui;removable
 

@@ -25,23 +25,42 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-# <src>                 <mnt_point>     <type>  <mnt_flags and options> <fs_mgr_flags>
-/dev/block/platform/13500000.dwmmc0/by-name/sec_efs     /efs            ext4    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/sec_efs     /sec_efs        ext4    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/boot        /boot           emmc    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/recovery    /recovery       emmc    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/cache       /cache          ext4    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/system      /		        ext4    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/userdata	/data	ext4	defaults	wait,length=-20480
-/dev/block/platform/13500000.dwmmc0/by-name/cpefs       /cpefs          ext4    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/misc        /misc           emmc    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/radio       /modem     		emmc    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/vendor		/vendor			ext4	default			 recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/cp_debug    /cp_debug       emmc    default          recoveryonly
-/dev/block/mmcblk1p1                                    /sdcard         sdfat   defaults         recoveryonly 
-/dev/block/platform/13500000.dwmmc0/by-name/product	    /product		ext4    defaults         recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/param       /param          emmc    defaults         recoveryonly
+# <src>			<mnt_point>	<type>	<mnt_flags and options>	<fs_mgr_flags>
+/dev/block/by-name/sec_efs 	/efs        	ext4	defaults		recoveryonly
+/dev/block/by-name/sec_efs	/sec_efs	ext4	defaults		recoveryonly
+/dev/block/by-name/boot	/boot		emmc	defaults		recoveryonly
+/dev/block/by-name/recovery	/recovery  	emmc	defaults		recoveryonly
+/dev/block/by-name/cache	/cache      	ext4	defaults		recoveryonly
+/dev/block/by-name/system	/     	        ext4	ro		recoveryonly
+/dev/block/by-name/userdata	/data	ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic	wait,length=-20480
+/dev/block/mmcblk0p1	/sdcard		sdfat	defaults		recoveryonly
+/dev/block/by-name/radio	/modem		emmc	defaults		recoveryonly
+/dev/block/by-name/vendor  /vendor     ext4    defaults     recoveryonly
+/dev/block/by-name/misc	/misc		emmc	defaults		recoveryonly
+/dev/block/by-name/hidden      /preload        ext4    defaults         recoveryonly
+/dev/block/by-name/cpefs	/cpefs		ext4	defaults		recoveryonly
+
+# FOTA
+/dev/block/by-name/product  /product     ext4    defaults     recoveryonly
 
 #Auto-generated code by FOTA Portal
-/dev/block/platform/13500000.dwmmc0/by-name/dtb	/dtb	emmc	default	recoveryonly
-/dev/block/platform/13500000.dwmmc0/by-name/dtbo	/dtbo	emmc	default	recoveryonly
+/dev/block/by-name/dtb	/dtb	emmc	default	recoveryonly
+/dev/block/by-name/dtbo	/dtbo	emmc	default	recoveryonly
+
+# Samsung ODE
+/dev/block/by-name/keydata    /keydata        ext4    defaults     recoveryonly
+/dev/block/by-name/keyrefuge  /keyrefuge      ext4    defaults     recoveryonly
+
+#Auto-generated code by FOTA Portal
+/dev/block/by-name/cp_debug	/cp_debug	emmc	default	recoveryonly
+/dev/block/by-name/radio2	/modem2	emmc	default	recoveryonly
+/dev/block/by-name/vbmeta_samsung	/vbmeta_samsung	emmc	default	recoveryonly
+
+
+
+
+
+#Auto-generated code by FOTA Portal
+/dev/block/by-name/optics	/optics	ext4	default	recoveryonly
+/dev/block/by-name/prism	/prism	ext4	default	recoveryonly
+/dev/block/by-name/vbmeta_system	/vbmeta_system	emmc	default	recoveryonly

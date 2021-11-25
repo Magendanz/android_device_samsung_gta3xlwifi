@@ -14,5 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/omni_gta3xlwifi.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/aosp_gta3xlwifi.mk
 
+COMMON_LUNCH_CHOICES := aosp_gta3xlwifi-eng
