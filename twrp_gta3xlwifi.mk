@@ -9,7 +9,7 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := gta3xlwifi
-PRODUCT_NAME := aosp_gta3xlwifi
+PRODUCT_NAME := twrp_gta3xlwifi
 PRODUCT_MODEL := SM-T510
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
